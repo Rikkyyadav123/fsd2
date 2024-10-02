@@ -1,0 +1,35 @@
+*
+{
+    margin:0px;
+    padding:0px;
+    box-sizing: 10px;
+}
+
+body 
+{
+ background-color:gold;
+
+ 
+ 
+}
+#heading
+{
+    background-color: rgba(0, 255, 255, 0.098);
+    font-size: 60px;
+    border-color: antiquewhite;
+    border-width:4px ;
+    border-style: dotted;
+    border-radius: 12px;
+    color:red;
+    text-align: center;
+}
+
+table
+{
+    text-align: center;
+    width:50%;
+    font-size: 25px;
+    color:blueviolet;
+    font-weight: bold;
+    height:100%;
+}
