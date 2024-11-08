@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <h2 id="head">Event in javascript</h2>
+    <button id="btn">click me</button>
+    <p id="nothing 1"></p>
+
+    <label for="nameInput" id="nameInput">Name:</label>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <p id="nothing 2"></p>
+
+    <label for="colorset">select a color:</label>
+    <select id="colorset">
+        <option id="red">Red</option>
+        <option id="blue">blue</option>
+        <option id="yellow">yellow</option>
+    </select>
+    <p id="nothing3"></p>
+
+    <label id="something">Type somenting:</label>
+    <input type="text" id="type" placeholder="Type something">
+    <p id="nothing4"></p>
+
+</body>
+<script>
+    let head=document.createElement('h2')
+    head.textContent='Events in javascript'
+    h2.id="hed"
+    document.body.appendChild(h2);
+
+    let button=document.createElement('button')
+    button.textContent='Click me'
+    button.id="btn"
+    document.body.appendChild(button);
+
+    document.getElementById("btn").addEventListener("click", function(){
+        document.getElementById("nothing 1").innerHTML = "Button clicked";
+    });
+    document.getElementById("nameInput").addEventListener("focus",function(){
+        document.getElementById("nothing 2").innerHTML="your text is focused"
+    });
+    document.getElementById("colorset").addEventListener("")
+
+</script>
+</html>

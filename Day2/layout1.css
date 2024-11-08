@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.box{
+    border: 3px solid wheat;
+    margin: 0 50px;
+    height: 500px;
+    width: 500px;
+    text-align: center;
+    margin-top: 100px;
+    size: 100px;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 10px 10px whitesmoke;
+}
+.text p{
+    font-size: 25px;
+}
+
+.box button{
+    height: 40px;
+    width: 100px;
+    background-color: greenyellow;
+    font-size: large;
+}

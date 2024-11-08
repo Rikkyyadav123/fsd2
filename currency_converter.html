@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="currency.css">
+</head>
+<body>
+    
+        <div>
+            <h1>Currency Converter</h1>
+        
+
+                <div>
+                    <label for="amount">Amount: <input type="number" id="input" placeholder="Enter amount"></label>
+                    <select name="fromCurrency" id="fromCurrency">
+                        <option value="USD">USD-American Dollar</option>
+                        <option value="AED">DHIRAM</option>
+                        <option value="INR">RUPEE-Indian Rupee</option>
+                    </select>
+                </div>
+                  
+                   <div>
+                    <label for="convert">Convert: <input type="text" id="output" readonly placeholder="Converted amount"></label>
+                    <select name="toCurrency" id="toCurrency">
+                        <option value="USD">USD-American Dollar</option>
+                        <option value="AED">DHIRAM</option>
+                        <option value="INR">RUPEE-Indian Rupee</option>
+                    </select>
+                </div>
+        
+        
+            <button onclick="convertCurrency()">Convert</button>
+        </div>
+    
+
+        <script>
+            async function convertCurrency() {
+                const amount = parseFloat(document.getElementById("input").value);
+                const fromCurrency = document.getElementById("fromCurrency").value;
+                const toCurrency = document.getElementById("toCurrency").value;
+    
+                if (!amount || !fromCurrency || !toCurrency) {
+                    alert("Please enter a valid amount and select currencies.");
+                    return;
+                }
+    
+                try {
+                    const response = await fetch("https://api.exchangerate-api.com/v4/latest/USD");
+                    const data = await response.json();
+    
+                    
+                    const fromRate = data.rates[fromCurrency];
+                    const toRate = data.rates[toCurrency];
+    
+        
+                    const convertedAmount = (amount / fromRate) * toRate;
+    
+            
+                    document.getElementById("output").value = convertedAmount.toFixed(2);
+                } catch (error) {
+                    console.error("Error fetching exchange rates:", error);
+                    alert("Failed to retrieve exchange rates. Please try again later.");
+                }
+            }
+        </script>
+    
+
+</body>
+</html>
