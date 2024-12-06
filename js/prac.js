@@ -28,15 +28,22 @@
 // });
 
 
-const promise = new Promise(function(resolve, reject) {
-    console.log("My first promise");
-    resolve("resolved");
-    reject("rejected");
-});
+// const promise = new Promise(function(resolve, reject) {
+//     console.log("My first promise");
+//     resolve("resolved");
+//     reject("rejected");
+// });
 
-promise.then(() => {
-    console.log("my first then");
-}).catch(() => {
-    console.log("my first catch");
-});
+// promise.then(() => {
+//     console.log("my first then");
+// }).catch(() => {
+//     console.log("my first catch");
+// });
+
+let i=1;
+while(i<20)
+{
+    console.log("hii rikky")
+    i++;
+}
 
